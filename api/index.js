@@ -123,6 +123,4 @@ app.put('/api/events/:eventId/tasks', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-  console.log(`Backend server listening at http://localhost:${port}`);
-});
+module.exports = app;

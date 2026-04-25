@@ -17,7 +17,7 @@ function EventForm() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
+      const apiUrl = process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '');
       const response = await axios.post(`${apiUrl}/api/generate-plan`, formData);
       toast({
         title: "Success!",
