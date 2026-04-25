@@ -1,0 +1,42 @@
+# dependencies
+<<<<<<< HEAD
+node_modules/
+=======
+/node_modules
+>>>>>>> 209a0978021d9484f4778c7a5433a51ceb558a3c
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env
+.env.local
+.env.*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# secrets
+backend/firebase-admin-key.json
