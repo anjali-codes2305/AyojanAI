@@ -63,7 +63,8 @@ function TaskBoard({ initialTasks, eventId }) {
 
       // Send the updated tasks to the backend
       const allTasks = Object.values(newColumns).flatMap(column => column.items);
-      axios.put(`http://localhost:5000/api/events/${eventId}/tasks`, { tasks: allTasks })
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
+      axios.put(`${apiUrl}/api/events/${eventId}/tasks`, { tasks: allTasks })
         .catch(err => console.error("Failed to update tasks on backend:", err));
 
     } else {

@@ -25,7 +25,8 @@ function Dashboard() {
 
     const fetchEventData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/events/${eventId}`);
+        const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
+        const response = await axios.get(`${apiUrl}/api/events/${eventId}`);
         if (response.data) {
           setEventData(response.data);
           toast({
@@ -91,6 +92,10 @@ function Dashboard() {
         <Stat p={5} shadow="md" borderWidth="1px" borderRadius="lg" bg="rgba(255,255,255,0.1)" borderColor="#444">
           <StatLabel>Completed Tasks</StatLabel>
           <StatNumber fontSize="2xl">{completedTasks}</StatNumber>
+        </Stat>
+        <Stat p={5} shadow="md" borderWidth="1px" borderRadius="lg" bg="rgba(255,255,255,0.1)" borderColor="#444">
+          <StatLabel>Pending Tasks</StatLabel>
+          <StatNumber fontSize="2xl">{pendingTasks}</StatNumber>
         </Stat>
       </SimpleGrid>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Heading, Text, SimpleGrid, Card, CardBody, Stack, Image, Tag, Flex, VStack, Center, Spinner, Icon } from '@chakra-ui/react';
+import { Box, Heading, Text, SimpleGrid, Card, CardBody, Image, Tag, Flex, VStack, Center, Spinner, Icon } from '@chakra-ui/react';
 import { FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
 
 // This is the placeholder data we will use for the hackathon

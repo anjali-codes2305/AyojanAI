@@ -1,12 +1,7 @@
 import React from 'react';
-import { Box, HStack, Text, Image, Flex, Button, useDisclosure, useBreakpointValue } from '@chakra-ui/react';
-import Logo from './image/logo.png'; // import your logo image
-import { Link as ReactLink } from 'react-router-dom';
-
+import { Box, HStack, Text, Flex, Button } from '@chakra-ui/react';
 
 function Navbar() {
-    const { isOpen, onOpen, onClose } = useDisclosure();
-    const isMobile = useBreakpointValue({ base: true, md: false });
 
     return (
         <Box

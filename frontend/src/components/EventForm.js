@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, FormControl, FormLabel, Input, Textarea, VStack, Heading, useToast, Spinner, Progress, Center, Text } from '@chakra-ui/react';
+import { Box, Button, FormControl, FormLabel, Input, Textarea, VStack, Heading, useToast, Progress, Center, Text } from '@chakra-ui/react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,7 +17,8 @@ function EventForm() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/generate-plan', formData);
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
+      const response = await axios.post(`${apiUrl}/api/generate-plan`, formData);
       toast({
         title: "Success!",
         description: response.data.message,
