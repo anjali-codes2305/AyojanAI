@@ -12,7 +12,12 @@ const port = 5000;
 // Path to your service account key.json file
 let db;
 try {
-  const serviceAccount = require(process.env.FIREBASE_SERVICE_ACCOUNT_PATH);
+  let serviceAccount;
+  if (process.env.FIREBASE_SERVICE_ACCOUNT_JSON) {
+    serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
+  } else {
+    serviceAccount = require(process.env.FIREBASE_SERVICE_ACCOUNT_PATH);
+  }
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
   });
